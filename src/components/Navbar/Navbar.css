@@ -1,0 +1,294 @@
+/* Navbar.css */
+
+.app__navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-black);
+  padding: 1rem 2rem;
+}
+
+.app__navbar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__navbar-logo img {
+  width: 150px;
+}
+
+.app__navbar-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  list-style: none;
+}
+
+.app__navbar-links li {
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.app__navbar-links li:hover {
+  margin: 0 1rem;
+  cursor: pointer;
+  color: var(--color-grey);
+}
+
+.app__navbar-login {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.app__navbar-login a {
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: 0.5s ease;
+}
+
+.app__navbar-login a:hover {
+  color: var(--color-golden);
+}
+
+.app__navbar-login div {
+  width: 1px;
+  height: 30px;
+  background-color: var(--color-grey);
+}
+
+.app__navbar-smallscreen {
+  display: none;
+  cursor: pointer;
+}
+
+.app__navbar-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.app__navbar-links.open li {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+.app__navbar-links a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .app__navbar-links {
+    display: none;
+    flex-direction: column;
+  }
+
+  .app__navbar-links.open {
+    display: flex;
+  }
+
+  .app__navbar-smallscreen {
+    display: block;
+  }
+}
+
+  
+
+@media (max-width: 650px) {
+  .app__navbar-logo img {
+    width: 150px;
+  }
+
+  .app__navbar-login {
+    display: none;
+  }
+}
+
+.app__navbar-links a {
+  text-decoration: none;
+  color: #fff;
+  position
+  : relative;
+  transition: color 0.3s ease;
+}
+
+.app__navbar-links a:hover {
+  color: var(--color-golden);
+}
+
+.app__navbar-links a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-golden);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.app__navbar-links a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Login.css */
+
+/* Add the following styles for sliding animation */
+
+.login__overlay.slide-left {
+  animation: slideLeft 0.5s ease;
+}
+
+.login__overlay.slide-right {
+  animation: slideRight 0.5s ease;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+
+.app__navbar-user {
+  position: relative;
+}
+
+.user-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--color-golden); /* Change to your desired yellow color */
+  color: var(--color-black); /* Change to the text color you prefer */
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.logout-button {
+  position: absolute;
+  top: 40px;
+  margin-right: 75px;
+  right: 0;
+  display: none;
+  background-color: var(--color-golden); 
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.app__navbar-user .logout-button {
+  display: block;
+}
+
+.logout-button button {
+  border: none;
+  padding: 5px 10px;
+  color: var(--color-black); 
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .logout-button {
+    top: 60px;
+    margin-right: 0;
+  }
+
+  .app__navbar-user .logout-button {
+    right: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 550px) {
+  .app__navbar-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none; /* Hide by default */
+  }
+
+  .app__navbar-links.open {
+    display: flex;
+  }
+
+  .app__navbar-links.open li {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+  }
+
+  .app__navbar-smallscreen {
+    display: block;
+  }
+
+  .app__navbar-login,
+  .app__navbar-user {
+    display: none; 
+  }
+
+  .app__navbar-booktable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    list-style: none;
+    margin-top: 10px;
+  }
+
+  .app__navbar-booktable a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .app__navbar-booktable a:hover {
+    color: var(--color-golden);
+  }
+}

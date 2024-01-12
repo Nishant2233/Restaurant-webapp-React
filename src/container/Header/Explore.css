@@ -1,0 +1,270 @@
+/* Explore.css */
+
+/* body {
+    margin: 0;
+    padding: 10;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+} */
+
+.explore-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1s ease-out;
+    border-right: 2px solid #001f3f;
+    z-index: 10;
+}
+
+.explore-content {
+    margin-top: 20px;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.explore-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style for different sections */
+section {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    animation: slideInLeft 1s ease-out;
+    border: 2px solid #ffd700;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Add transition for smooth scaling effect */
+}
+
+/* Add pop-up effect on hover */
+section:hover {
+    transform: scale(1.05);
+}
+
+.black-section {
+    background-color: #000;
+}
+
+.table-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.table-layout-item {
+    flex: 1;
+    margin: 10px;
+    animation: slideInUp 1s ease-out;
+}
+
+h3 {
+    font-size: 2rem;
+    color: #dcca87;
+}
+
+h4 {
+    font-size: 1.5rem;
+    color: #dcca87;
+}
+
+p {
+    font-size: 1rem;
+}
+
+/* Style for Special Offer Timer Section */
+.special-offer-section {
+    background-color: #000;
+    border: 2px solid #ffd700;
+    animation: slideInRight 1s ease-out;
+    position: relative;
+}
+
+.special-offer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer {
+    font-size: 2rem;
+    color: #c6f314;
+    margin-top: 10px;
+    background-color:  #111ced;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #130f59;
+    animation: pulse 1.5s infinite alternate;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Style for Menu Highlights Section */
+.menu-highlights-section {
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    animation: slideInLeft 1s ease-out;
+}
+
+.menu-highlights {
+    display: flex;
+    gap: 20px;
+}
+
+.menu-highlights div {
+    flex: 1;
+}
+
+/* Style for Review Section */
+.black-section.table-layout .table-layout-item {
+    animation: slideInUp 1s ease-out, slideInRight 1s ease-out;
+}
+
+.review-form {
+    animation: slideInLeft 1s ease-out;
+}
+
+.rating {
+    font-size: 2rem;
+    color: #dcca87;
+    margin-bottom: 10px;
+}
+
+.rating span {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.rating span.selected {
+    color: #d81e5b;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ffd700;
+    border-radius: 5px;
+    color: #000;
+    background-color: #fff;
+}
+
+button {
+    background-color: #d81e5b;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ae1447;
+}
+
+/* Additional Styling and Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    .explore-container {
+        border-right: none;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .explore-container {
+        max-width: none;
+    }
+}
+
+/* Explore.css */
+
+/* ... (unchanged code) */
+
+.close-button {
+    background-color: #d81e5b;
+    color: #fff;
+    padding: 10px 15px;
+    border: 1px solid #ffd700;
+    margin: 1px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    position: absolute;
+    
+    top: 2px;
+    right: 2px;
+}
+
+.close-button:hover {
+    background-color: #2e1ab2;
+}
+
+/* ... (unchanged code) */
+

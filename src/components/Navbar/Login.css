@@ -1,0 +1,406 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Login Overlay */
+.login__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #000, #001f3f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Login Container */
+/* Login Container */
+.login__container {
+  background: rgba(12, 9, 68, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px; /* Set a maximum width */
+  margin: 0 auto; /* Center the container */
+  height: 450px;
+  box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+
+/* Login Styles */
+.login__button,
+.login__close {
+  background-color: #e03b28;
+  border: 4px solid #f1240d;
+  position: relative;
+  margin-top: 2px;
+  z-index: 1;
+  overflow: hidden;
+  color: white
+  
+}
+
+.login__button:hover,
+.login__close:hover {
+  background-color: #a5281b;
+  color: var(--color-golden)
+}
+
+/* Red Line Animation */
+@keyframes moveRedLine {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+/* Apply Red Line Animation */
+.login__overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #3f3ce7, transparent, #e74c3c);
+  background-size: 200% 100%;
+  animation: moveRedLine 3s infinite linear;
+}
+
+/* Animated Background Shapes */
+.login__container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #3498db, #1abc9c);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  z-index: -1;
+  animation: floatBackground 15s infinite linear;
+}
+
+@keyframes floatBackground {
+  0% {
+    transform: translate(0, -10%);
+  }
+  50% {
+    transform: translate(0, 10%);
+  }
+  100% {
+    transform: translate(0, -10%);
+  }
+}
+
+/* Common Styles for Both Overlays */
+.overlay h1 {
+  color: #3498db;
+}
+
+.overlay p {
+  color: #ecf0f1;
+}
+
+/* Additional Styles for Login */
+.login__container h2 {
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.login__form {
+  margin-bottom: 20px;
+}
+
+.login__form label {
+  color: var(--color-golden);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login__form input[type="text"],
+.login__form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  
+}
+
+.login__error {
+  color: #e74c3c;
+  margin-top: 10px;
+}
+
+.login__toggle {
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.login__close {
+  background-color: #c0392b;
+  border: 2px solid #e74c3c;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login__close:hover {
+  background-color: #a5281b;
+}
+
+.login__overlay.registering {
+  background: linear-gradient(45deg, #000, #001f3f);
+}
+
+.login__container.registering {
+  width: 350px;
+}
+
+.login__button.registering,
+.login__close.registering {
+  background-color: #27ae60;
+  border: 2px solid #2ecc71;
+}
+
+.login__button.registering:hover,
+.login__close.registering:hover {
+  background-color: #229954;
+}
+
+/* Shape Puzzle Styles */
+.puzzle__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #000, #001f3f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.puzzle__container {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.puzzle__shapes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.puzzle__shape {
+  width: 100%;
+  height: 0;
+  padding-bottom: calc(100% / (16 / 9));
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.puzzle__shape--square {
+  background: red;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.puzzle__shape--circle {
+  background: blue;
+  border-radius: 50%;
+}
+
+.puzzle__shape--rectangle {
+  background: yellow;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.puzzle__shape--triangle {
+  background: green;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.puzzle__shape--target {
+  filter: brightness(150%) drop-shadow(0 0 10px lightblue);
+}
+
+.puzzle__shape--square:before,
+.puzzle__shape--circle:before,
+.puzzle__shape--rectangle:before,
+.puzzle__shape--triangle:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.puzzle__shape--square:before {
+  background: inherit;
+  clip-path: polygon(0 50%, 50% 0, 100% 50%, 50% 100%);
+}
+
+.puzzle__shape--circle:before {
+  background: inherit;
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+}
+
+.puzzle__shape--rectangle:before {
+  background: inherit;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+}
+
+.puzzle__shape--triangle:before {
+  background: inherit;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/* Highlighted Shadow & Hover Effect */
+.puzzle__shape--target:hover:after {
+  animation: pulse 1s ease-in-out infinite;
+  filter: brightness(200%) drop-shadow(0 0 20px lightblue);
+}
+
+@keyframes pulse {
+  0% {
+    filter: brightness(200%) drop-shadow(0 0 10px lightblue);
+  }
+  50% {
+    filter: brightness(300%) drop-shadow(0 0 30px lightblue);
+  }
+  100% {
+    filter: brightness(200%) drop-shadow(0 0 10px lightblue);
+  }
+}
+.puzzle__shape--popped {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.puzzle__shape--selected {
+  filter: brightness(120%) drop-shadow(0 0 20px lightblue) drop-shadow(0 0 0 blue);
+}
+
+.puzzle__shape--selected:active {
+  box-shadow: 0 0 0 0.2rem rgb(0 153 255 / 25%);
+  
+}
+
+/* Media query for smaller screens */
+@media screen and (max-height: 500px) {
+  .puzzle__container {
+    grid-template-rows: repeat(2, minmax(0, 1fr)) auto 1fr;
+  }
+}
+.puzzle__shape--highlight {
+  filter: brightness(120%) drop-shadow(0 0 20px lightblue) drop-shadow(0 0 0 blue);
+}
+.puzzle__shape--highlight {
+  filter: brightness(120%) drop-shadow(0 0 20px lightblue) drop-shadow(0 0 0 blue);
+}
+
+
+
+
+
+
+
+
+
+/* ... (previous styles) ... */
+
+/* Common Styles for Both Overlays */
+.overlay h1,
+.overlay p {
+  color: #3498db;
+}
+
+/* Additional Styles for Login */
+.login__container h2,
+.login__form label {
+  color: #3498db;
+}
+
+.login__container,
+.login__button,
+.login__close {
+  width: 100%;
+}
+
+.login__container {
+  border-radius: 0;
+}
+
+.login__button,
+.login__close {
+  margin-top: 10px;
+}
+
+/* Media query for smaller screens (mobile) */
+@media only screen and (max-width: 600px) {
+  .login__container,
+  .puzzle__container {
+    width: 90%;
+  }
+  
+  .login__container,
+  .puzzle__container,
+  .login__button,
+  .login__close,
+  .login__overlay.registering,
+  .login__container.registering {
+    margin: 0 auto;
+  }
+
+  .login__container,
+  .puzzle__container,
+  .login__overlay.registering,
+  .login__container.registering {
+    padding: 20px;
+  }
+
+  .puzzle__shapes {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .puzzle__shape {
+    padding-bottom: calc(100% / (16 / 9));
+  }
+}
+
+/* Media query for small screens (tablet) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .login__container,
+  .puzzle__container {
+    width: 80%;
+  }
+}
+
+/* ... (previous styles) ... */
+

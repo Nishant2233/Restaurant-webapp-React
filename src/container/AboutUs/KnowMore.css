@@ -1,0 +1,136 @@
+/* KnowMore.css */
+
+:root {
+  --color-black: #1a1a1a;
+  --color-dark-blue: #2c3e50;
+  --color-golden: #f39c12;
+  --color-white: #ecf0f1;
+  --color-g:#DCCA87;
+}
+
+.know-more-page {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
+  overflow-y: scroll; /* Enable scrolling for longer content */
+}
+
+.know-more-content {
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+  padding: 40px;
+  border-radius: 20px;
+  background: var(--color-black); /* Plain black background */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color-golden); /* Add border for a modern look */
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--color-white);
+  background-color: var(--color-dark-blue);
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.close-icon:hover {
+  background-color: var(--color-golden);
+}
+
+.about-page.open,
+.history-page.open {
+  top: 0;
+  opacity: 1;
+  overflow-y: auto; /* Allow scrolling */
+  overflow-x: hidden;
+}
+
+/* Additional Styling Enhancements */
+.about-page h1,
+.history-page h1 {
+  font-size: 36px;
+  color: var(--color-golden);
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+.about-page p,
+.history-page p {
+  font-size: 18px; /* Slightly increase font size for better readability */
+  line-height: 1.6;
+  color: var(--color-white);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--color-golden);
+  padding-bottom: 15px;
+}
+
+.spoon__img,
+.knife__img {
+  width: 100px;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* Shapes and Decorations */
+.about-page::before,
+.history-page::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+  background: linear-gradient(135deg,
+var(--color-g) 100%, var(--color-dark-blue) 100%);
+  z-index: -1;
+  animation: slideIn 0.8s ease-in-out;
+}
+
+.about-page::after,
+.history-page::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-golden);
+  border-radius: 50%;
+  z-index: -1;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes slideIn {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100%;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
