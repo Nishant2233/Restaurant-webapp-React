@@ -5,7 +5,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Login Overlay */
+
 .login__overlay {
   position: fixed;
   top: 0;
@@ -19,15 +19,14 @@ body {
   animation: fadeIn 0.5s ease;
 }
 
-/* Login Container */
-/* Login Container */
+
 .login__container {
   background: rgba(12, 9, 68, 0.8);
   padding: 40px;
   border-radius: 10px;
   width: 100%;
-  max-width: 500px; /* Set a maximum width */
-  margin: 0 auto; /* Center the container */
+  max-width: 500px; 
+  margin: 0 auto; 
   height: 450px;
   box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
   position: relative;
@@ -36,7 +35,6 @@ body {
 }
 
 
-/* Login Styles */
 .login__button,
 .login__close {
   background-color: #e03b28;
@@ -65,7 +63,7 @@ body {
   }
 }
 
-/* Apply Red Line Animation */
+
 .login__overlay::before {
   content: "";
   position: absolute;
@@ -78,7 +76,7 @@ body {
   animation: moveRedLine 3s infinite linear;
 }
 
-/* Animated Background Shapes */
+
 .login__container::before {
   content: "";
   position: absolute;
@@ -104,7 +102,7 @@ body {
   }
 }
 
-/* Common Styles for Both Overlays */
+
 .overlay h1 {
   color: #3498db;
 }
@@ -113,7 +111,7 @@ body {
   color: #ecf0f1;
 }
 
-/* Additional Styles for Login */
+
 .login__container h2 {
   color: #3498db;
   margin-bottom: 10px;
@@ -312,7 +310,7 @@ body {
   
 }
 
-/* Media query for smaller screens */
+
 @media screen and (max-height: 500px) {
   .puzzle__container {
     grid-template-rows: repeat(2, minmax(0, 1fr)) auto 1fr;
@@ -333,9 +331,7 @@ body {
 
 
 
-/* ... (previous styles) ... */
 
-/* Common Styles for Both Overlays */
 .overlay h1,
 .overlay p {
   color: #3498db;
@@ -362,7 +358,7 @@ body {
   margin-top: 10px;
 }
 
-/* Media query for smaller screens (mobile) */
+
 @media only screen and (max-width: 600px) {
   .login__container,
   .puzzle__container {
@@ -394,7 +390,6 @@ body {
   }
 }
 
-/* Media query for small screens (tablet) */
 @media only screen and (min-width: 601px) and (max-width: 900px) {
   .login__container,
   .puzzle__container {
@@ -402,5 +397,5 @@ body {
   }
 }
 
-/* ... (previous styles) ... */
+
 
