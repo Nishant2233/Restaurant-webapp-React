@@ -23,7 +23,7 @@
   z-index: 1000;
   opacity: 0;
   transition: opacity 0.5s ease-in-out, top 0.5s ease-in-out;
-  overflow-y: scroll; /* Enable scrolling for longer content */
+  overflow-y: scroll; 
 }
 
 .know-more-content {
@@ -32,11 +32,11 @@
   max-width: 600px;
   padding: 40px;
   border-radius: 20px;
-  background: var(--color-black); /* Plain black background */
+  background: var(--color-black); 
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
-  border: 2px solid var(--color-golden); /* Add border for a modern look */
+  border: 2px solid var(--color-golden); 
 }
 
 .close-icon {
@@ -60,11 +60,11 @@
 .history-page.open {
   top: 0;
   opacity: 1;
-  overflow-y: auto; /* Allow scrolling */
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
-/* Additional Styling Enhancements */
+
 .about-page h1,
 .history-page h1 {
   font-size: 36px;
@@ -75,7 +75,7 @@
 
 .about-page p,
 .history-page p {
-  font-size: 18px; /* Slightly increase font size for better readability */
+  font-size: 18px; 
   line-height: 1.6;
   color: var(--color-white);
   margin-bottom: 20px;
@@ -90,7 +90,7 @@
   margin-top: 20px;
 }
 
-/* Shapes and Decorations */
+
 .about-page::before,
 .history-page::before {
   content: '';
